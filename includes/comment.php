@@ -11,7 +11,7 @@
 <body>
 
     <!-- Le bouton qui déclenche l'affichage du pop-up -->
-    <button id="openFormBtn" onclick="openForm()">Ajouter un Commentaire</button>
+    <button id="openFormBtn" onclick="openForm()">Commentaire</button>
 
     <!-- Le pop-up du formulaire -->
     <div id="commentForm" class="form-popup">

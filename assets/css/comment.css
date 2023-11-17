@@ -25,6 +25,7 @@ form textarea {
     display: inline-block;
     border: 1px solid #ccc;
     box-sizing: border-box;
+    
 }
 
 /* Style pour le bouton de soumission et de fermeture */
