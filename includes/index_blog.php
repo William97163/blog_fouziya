@@ -9,7 +9,9 @@
 
 <div class="container">
     <h1>Liste des Articles</h1>
-    
+    <?php
+    include("includes/single.php")
+    ?>
     <div class="blog-list">
         <?php
         // Simulation de données d'articles (vous devez remplacer cela par la récupération de données réelles depuis une source comme une base de données)
