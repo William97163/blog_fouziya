@@ -1,0 +1,65 @@
+/* Style pour le pop-up */
+.form-popup {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    right: 15px;
+    border: 1px solid #dcdcdc;
+    z-index: 9;
+    max-width: 300px;
+    background-color: #f9f9f9;
+    padding: 15px;
+}
+
+/* Style pour le formulaire à l'intérieur du pop-up */
+.form-container {
+    max-width: 100%;
+}
+
+/* Style pour les champs du formulaire */
+form input[type=text],
+form textarea {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0 15px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    
+}
+
+/* Style pour le bouton de soumission et de fermeture */
+form .btn {
+    background-color: #FFBB98;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+form .btn:hover {
+    background-color: #45a049;
+}
+
+/* Style pour le bouton de fermeture */
+form .cancel {
+    background-color: #ff5858;
+}
+
+form .cancel:hover {
+    background-color: #d82828;
+}
+
+/* Style pour le bouton qui déclenche le pop-up */
+#openFormBtn {
+    background-color: #FFBB98;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+}
+
+#openFormBtn:hover {
+    background-color: #45a049;
+}
