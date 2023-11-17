@@ -1,5 +1,5 @@
 <?php
-namespace  class;
+namespace  entity;
 class Commentaire
 {
     public $id;

@@ -6,7 +6,7 @@
 <div class="utilisateurs"> <h2>Utilisateur :</h2>
     <?php
     require_once './class/Utilisateurs.php';
-    use class\Utilisateur;
+    use entity\Utilisateur;
     $utilisateurs = Utilisateur::fetchUtilisateurs();
     ?>
     <div>
@@ -24,7 +24,7 @@
 <div class="commentaires"> <h2>Commentaire :</h2>
     <?php
     require_once './class/Commentaire.php';
-    use class\Commentaire;
+    use entity\Commentaire;
     $commentaires = Commentaire::fetchCommentaire();
     ?>
     <div>
@@ -41,7 +41,7 @@
 <div class="posts"> <h2>Post :</h2>
     <?php
     require_once './class/Post.php';
-    use class\Post;
+    use entity\Post;
     $posts = Post::fetchPost();
     ?>
     <div>

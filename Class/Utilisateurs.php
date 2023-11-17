@@ -1,6 +1,6 @@
 <?php
 
-namespace class;
+namespace entity;
 class Utilisateur
 {
     public $id;
