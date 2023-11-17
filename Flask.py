@@ -15,7 +15,7 @@ def utilisateurs():
     cursor = mysql.connection.cursor()
     if request.method == 'GET':
         try:
-            cursor.execute('SELECT pseudo, mail, tel FROM Utilisateur')
+            cursor.execute('SELECT id, pseudo, mail, tel FROM Utilisateur')
             data = cursor.fetchall()
             return jsonify(data)
         except:
@@ -23,7 +23,7 @@ def utilisateurs():
     elif request.method == 'POST':
         pseudo = request.form['pseudo']
         try:
-            cursor.execute("SELECT pseudo, mail, tel FROM Utilisateur WHERE pseudo = %s", (pseudo,))
+            cursor.execute("SELECT id, pseudo, mail, tel FROM Utilisateur WHERE pseudo = %s", (pseudo,))
             data = cursor.fetchall()
             return jsonify(data)
         except:
@@ -155,7 +155,6 @@ def addLike():
         id_post = request.form['id_post']
         try:
             cursor.execute("SELECT * FROM LikePost WHERE id_user = %s AND id_post = %s", (id_user, id_post))
-
             data = len(cursor.fetchall())
             print(data)
             if data > 0:
@@ -165,11 +164,9 @@ def addLike():
                                (id_user, id_post))
                 mysql.connection.commit()
                 return "like ajouté"
-
-
-
         except:
             return "Erreur lors de l'ajout du like"
+
 @app.route('/likes', methods=['POST'])
 def likes():
     cursor = mysql.connection.cursor()
@@ -178,7 +175,6 @@ def likes():
         try:
             cursor.execute("SELECT * FROM LikePost WHERE id_post = %s", (id_post))
             data = len(cursor.fetchall())
-
             return jsonify(data)
         except:
             return "Erreur lors du comptage de like"

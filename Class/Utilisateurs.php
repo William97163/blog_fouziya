@@ -9,10 +9,9 @@ class Utilisateur
     public $mail;
     public $tel;
 
-    public function __construct($id, $pseudo, $mdp, $mail, $tel) {
+    public function __construct($id, $pseudo, $mail, $tel) {
         $this->id = $id;
         $this->pseudo = $pseudo;
-        $this->mdp = $mdp;
         $this->mail = $mail;
         $this->tel = $tel;
     }
@@ -23,7 +22,7 @@ class Utilisateur
 
         $utilisateurs = [];
         foreach ($data as $item) {
-            $utilisateur = new Utilisateur($item[0], $item[1], $item[2], $item[3], $item[4]);
+            $utilisateur = new Utilisateur($item[0], $item[1], $item[2], $item[3]);
             $utilisateurs[] = $utilisateur;
         }
 
