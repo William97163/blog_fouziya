@@ -147,19 +147,40 @@ def commentaires():
         except:
             return "Erreur lors de l'ajout du commentaire"
 
-@app.route('/like', methods=['POST'])
-def like():
+@app.route('/addLike', methods=['POST'])
+def addLike():
     cursor = mysql.connection.cursor()
     if request.method == 'POST':
         id_user = request.form['id_user']
         id_post = request.form['id_post']
         try:
-            cursor.execute(f"INSERT INTO LikePost (id_user, id_post) VALUES (%s, %s)",
-                           (id_user, id_post))
-            mysql.connection.commit()
-            return redirect(f"http://127.0.0.1:8000/posts/{id_post}", code=302)
+            cursor.execute("SELECT * FROM LikePost WHERE id_user = %s AND id_post = %s", (id_user, id_post))
+
+            data = len(cursor.fetchall())
+            print(data)
+            if data > 0:
+                return "like deja existant"
+            else:
+                cursor.execute(f"INSERT INTO LikePost (id_user, id_post) VALUES (%s, %s)",
+                               (id_user, id_post))
+                mysql.connection.commit()
+                return "like ajouté"
+
+
+
         except:
             return "Erreur lors de l'ajout du like"
+@app.route('/likes', methods=['POST'])
+def likes():
+    cursor = mysql.connection.cursor()
+    if request.method == 'POST':
+        id_post = request.form['id_post']
+        try:
+            cursor.execute("SELECT * FROM LikePost WHERE id_post = %s", (id_post))
+            data = len(cursor.fetchall())
 
+            return jsonify(data)
+        except:
+            return "Erreur lors du comptage de like"
 if __name__ == "__main__":
     app.run(host='localhost', port=5000)
