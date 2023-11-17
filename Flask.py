@@ -29,8 +29,8 @@ def utilisateurs():
         except:
             return "Erreur lors de la récupération des données utilisateur"
 
-@app.route('/login', methods=['GET', 'POST'])
-def utilisateurs():
+@app.route('/login', methods=['POST'])
+def login():
     cursor = mysql.connection.cursor()
     if request.method == 'POST':
         pseudo = request.form['pseudo']
