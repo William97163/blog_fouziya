@@ -1,6 +1,3 @@
-body {
-    color: #ccc;
-}
 
 /* Footer Styles */
 .footer-widget p {
@@ -92,37 +89,32 @@ p {
 }
 
 /* DK Footer Styles */
+
+
 .dk-footer {
-    padding: 75px 0 0;
+    padding: 0px 0 0;
     background-color: #344648;
     position: relative;
-    z-index: 2;
-}
-
-.dk-footer .contact-us {
-    margin-top: 0;
-    margin-bottom: 30px;
-    padding-left: 80px;
-}
-
-.dk-footer .contact-us .contact-info {
-    margin-left: 50px;
-}
-
-.dk-footer .contact-us.contact-us-last {
-    margin-left: -80px;
-}
-
-.dk-footer .contact-icon i {
-    font-size: 24px;
-    top: -15px;
-    position: relative;
-    color: #007bff;
-}
+    z-index: 2; 
+    top: 100px}
+    .dk-footer .contact-us {
+      margin-top: 0;
+      margin-bottom: 30px;
+      padding-left: 80px; }
+      .dk-footer .contact-us .contact-info {
+        margin-left: 50px; }
+      .dk-footer .contact-us.contact-us-last {
+        margin-left: -80px; }
+    .dk-footer .contact-icon i {
+      font-size: 24px;
+      top: 0px;
+      position: relative;
+      color:#007bff; }
+  
 
 .dk-footer-box-info {
     position: absolute;
-    top: -122px;
+    top: 0px;
     background: #7D8E95;
     padding: 40px;
     z-index: 2;
@@ -201,14 +193,14 @@ p {
 }
 
 .footer-widget .section-heading {
-    margin-bottom: 35px;
+    margin-bottom: 10px;
 }
 
 .footer-widget h3 {
     font-size: 24px;
     color: #FFBB98;
     position: relative;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     max-width: fit-content;
 }
 
@@ -221,7 +213,7 @@ p {
 }
 
 .footer-widget li {
-    margin-bottom: 18px;
+    margin-bottom: 10px;
 }
 
 .footer-widget a {
@@ -280,6 +272,7 @@ p {
     cursor: pointer;
 }
 
+
 /* Contact Styles */
 .contact-us {
     position: relative;
@@ -295,7 +288,7 @@ p {
 
 .contact-icon i {
     font-size: 36px;
-    top: -5px;
+    top: 0px;
     position: relative;
     color: #007bff;
 }
@@ -364,3 +357,12 @@ p {
     background: #FA6742;
     border-color: #FA6742;
 }
+/* Footer Widget Styles */
+.footer-widget p {
+    margin-bottom: 10px;
+}
+
+.footer-widget li {
+    margin-bottom: 10px;
+}
+

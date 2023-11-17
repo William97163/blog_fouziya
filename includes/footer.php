@@ -12,12 +12,6 @@
             <div class="row">
                 <div class="col-md-12 col-lg-4">
                     <div class="dk-footer-box-info">
-                        <a href="index.html" class="footer-logo">
-                            <img src="images/footer_logo.png" alt="footer_logo" class="img-fluid">
-                        </a>
-                        <p class="footer-info-text">
-                           Reference site about Lorem Ipsum, giving information on its origins, as well as a random Lipsum generator.
-                        </p>
                         <div class="footer-social-link">
                             <h3>Follow us</h3>
                             <ul>
