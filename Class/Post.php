@@ -3,15 +3,17 @@ namespace entity;
 class Post
 {
     public $id;
-    public $contenu;
+    public $content;
+    public $title;
     public $date;
     public $id_admin;
 
-    public function __construct($id, $contenu, $date, $id_admin) {
+    public function __construct($id, $content, $date, $id_admin,  $title) {
         $this->id = $id;
-        $this->contenu = $contenu;
         $this->date = $date;
+        $this->content = $content;
         $this->id_admin = $id_admin;
+        $this->title = $title;
     }
 
     public static function fetchPost() {
@@ -20,7 +22,7 @@ class Post
 
         $posts = [];
         foreach ($data as $item) {
-            $post = new Post($item[0], $item[1], $item[2], $item[3]);
+            $post = new Post($item[0], $item[1], $item[2], $item[3], $item[4]);
             $posts[] = $post;
         }
 

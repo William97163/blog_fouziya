@@ -147,6 +147,7 @@ def commentaires():
         except:
             return "Erreur lors de l'ajout du commentaire"
 
+
 @app.route('/addLike', methods=['POST'])
 def addLike():
     cursor = mysql.connection.cursor()

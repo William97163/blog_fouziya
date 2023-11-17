@@ -28,7 +28,7 @@ body {
     cursor: pointer;
 }
 
-.container {
+.container_single {
     width: 50%;
     margin: 50px auto;
     padding: 20px;

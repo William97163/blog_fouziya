@@ -12,10 +12,10 @@
 
 <div class="login-container">
     <h2>Sign In</h2>
-    <form action="" method="post"> 
-        <input type="text" name="username" placeholder="Username" required>
+    <form action="http://localhost:5000/login" method="post">
+        <input type="text" name="pseudo" placeholder="pseudo" required>
         <br>
-        <input type="password" name="password" placeholder="Password" required>
+        <input type="mdp" name="mdp" placeholder="mdp" required>
         <br>
         <button type="submit">Sign In</button>
     </form>

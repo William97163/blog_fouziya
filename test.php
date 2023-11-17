@@ -48,7 +48,6 @@
         <?php
         foreach ($posts as $post){
             $post->display();
-        }
         ?>
     </div>
 </div>
