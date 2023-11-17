@@ -1,0 +1,48 @@
+.h_container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex; /* Appliquer flexbox sur le conteneur */
+    justify-content: space-between; /* Pour séparer les éléments avec de l'espace entre eux */
+    align-items: center; /* Pour aligner verticalement les éléments */
+}
+
+/* Styles pour l'en-tête */
+header {
+    background-color: #FFBB98;
+    padding: 20px 0;
+}
+
+header h1 {
+    font-size: 2em;
+    font-family: Arial, sans-serif;
+}
+
+header nav ul {
+    list-style: none;
+    text-align: center;
+}
+
+header nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #344648;
+}
+
+header nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Styles pour les liens */
+a {
+    color: #007bff;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #0056b3;
+}
