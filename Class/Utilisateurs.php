@@ -29,15 +29,6 @@ class Utilisateur
 
         return $utilisateurs;
     }
-//    public static function loginUtilisateur($form) {
-//        $response = file_get_contents('http://localhost:5000/login');
-//        $data = json_decode($response);
-//
-//        $utilisateur = new Utilisateur($item[0], $item[1], $item[2], $item[3], $item[4]);
-//
-//        return $utilisateur;
-//    }
-
 
 
     public function display() {
