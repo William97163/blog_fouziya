@@ -29,6 +29,18 @@ def utilisateurs():
         except:
             return "Erreur lors de la récupération des données utilisateur"
 
+@app.route('/utilisateur', methods=['POST'])
+def utilisateur():
+    cursor = mysql.connection.cursor()
+    id = request.form['id']
+    if request.method == 'POST':
+        try:
+            cursor.execute("SELECT * FROM utilisateur WHERE id = %s", (id))
+            data = cursor.fetchall()
+            return jsonify(data)
+        except:
+            return f"Erreur lors de la récupération des données utilisateur {id}"
+
 @app.route('/login', methods=['POST'])
 def login():
     cursor = mysql.connection.cursor()
