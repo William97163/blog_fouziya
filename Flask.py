@@ -56,7 +56,7 @@ def posts():
         title = request.form['title']
         id_admin = request.form['id_admin']
         try:
-            cursor.execute("INSERT INTO Post (contenu, title, id_admin, date) VALUES (%s, %s, %s, NOW())",
+            cursor.execute("INSERT INTO Post (contenu, title, id_admin) VALUES (%s, %s, %s)",
                            (contenu, title, id_admin))
             mysql.connection.commit()
             return redirect("http://127.0.0.1:8000/posts", code=302)
@@ -78,7 +78,7 @@ def commentaires():
         id_user = request.form['id_user']
         id_post = request.form['id_post']
         try:
-            cursor.execute(f"INSERT INTO Commentaire (contenu, id_user, date) VALUES (%s, %s, NOW())",
+            cursor.execute(f"INSERT INTO Commentaire (contenu, id_user, id_post) VALUES (%s, %s, %s)",
                            (contenu, id_user, id_post))
             mysql.connection.commit()
             return redirect(f"http://127.0.0.1:8000/posts/{id_post}", code=302)
