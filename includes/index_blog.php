@@ -42,7 +42,7 @@
                     <button class="btn_modify">modifier</button>
                     <button class="btn_delete">supprimer</button>
                     <button class="btn_liker">liker</button>
-                    <button class="btn_comment">commenter</button>
+                    <?php include("./includes/comment.php");?>
                 </div>
                 <div class="likes">likes : </div>
             </div>
