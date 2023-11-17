@@ -37,17 +37,34 @@ def login():
         mdp = request.form['mdp']
         try:
 
-            cursor.execute("SELECT pseudo, mail, tel FROM Utilisateur WHERE pseudo = %s AND mdp = %s", (pseudo, mdp))
+            cursor.execute("SELECT id, pseudo, mail, tel, is_admin FROM Utilisateur WHERE pseudo = %s AND mdp = %s", (pseudo, mdp))
+            user = cursor.fetchall()
+            try:
+                cursor.execute("SELECT * FROM Admin WHERE id_user = %s", (user[0][0]))
+                admin = cursor.fetchall()
+                return jsonify(admin)
+            except:
+                return jsonify(user)
 
-            data = cursor.fetchall()
-
-            print(pseudo)
-            print(data[0])
-
-            cursor.execute("SELECT name, pseudo, mail, tel FROM Admin WHERE id_user = %s", (1))
-            return jsonify(data)
         except:
             return "Erreur lors de la récupération des données utilisateur"
+
+@app.route('/isAdmin', methods=['POST'])
+def isAdmin():
+    cursor = mysql.connection.cursor()
+    if request.method == 'POST':
+        id = request.form['id']
+        try:
+            cursor.execute("SELECT id FROM Admin WHERE id_user = %s", (id))
+            user = cursor.fetchall()
+            if len(user) > 0:
+                return jsonify(True)
+            else:
+                return jsonify(False)
+        except:
+            return "Erreur lors de la récupération des données admin"
+
+
 @app.route('/posts', methods=['GET', 'POST'])
 def posts():
     cursor = mysql.connection.cursor()
