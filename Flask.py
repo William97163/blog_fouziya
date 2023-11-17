@@ -95,17 +95,17 @@ def posts():
             cursor.execute("INSERT INTO Post (contenu, title, id_admin) VALUES (%s, %s, %s)",
                            (contenu, title, id_admin))
             mysql.connection.commit()
-            return redirect("http://127.0.0.1:8000/posts", code=302)
+            return "post ajouté"
         except:
             return "Erreur lors de l'ajout du post"
 
 @app.route('/post', methods=['POST'])
 def post():
     cursor = mysql.connection.cursor()
-    id_post = request.form['id_post']
     if request.method == 'POST':
         try:
-            cursor.execute("SELECT * FROM Post WHERE id_post = %s", (id_post))
+            id_post = request.form['id_post']
+            cursor.execute("SELECT * FROM Post WHERE id = %s", (id_post))
             data = cursor.fetchall()
             return jsonify(data)
         except:

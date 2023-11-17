@@ -16,7 +16,7 @@ class Post
         $this->title = $title;
     }
 
-    public static function fetchPost() {
+    public static function fetchPosts() {
         $response = file_get_contents('http://localhost:5000/posts');
         $data = json_decode($response);
 

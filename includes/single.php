@@ -13,11 +13,10 @@
             <label for="title">Titre de l'article :</label><br>
             <input type="text" id="title" name="title" required><br><br>
 
-            <label for="content">Contenu de l'article :</label><br>
-            <textarea id="content" name="content" rows="6" required></textarea><br><br>
+            <label for="contenu">Contenu de l'article :</label><br>
+            <textarea id="contenu" name="contenu" rows="6" required></textarea><br><br>
 
             <input type="hidden" id="id_admin" name="id_admin" value="1" ><br><br>
-
 
             <input type="submit" value="Créer l'article">
         </form>

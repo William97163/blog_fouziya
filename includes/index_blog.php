@@ -16,7 +16,7 @@
         require_once './class/Post.php';
         use entity\Post;
         // Simulation de données d'articles (vous devez remplacer cela par la récupération de données réelles depuis une source comme une base de données)
-        $articles = Post::fetchPost();
+        $articles = Post::fetchPosts();
         ?>
                 <?php
 
