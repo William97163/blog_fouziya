@@ -37,13 +37,14 @@ def login():
         mdp = request.form['mdp']
         try:
 
-            cursor.execute("SELECT name, pseudo, mail, tel FROM Utilisateur WHERE pseudo = %s AND mdp = %s", (pseudo, mdp))
+            cursor.execute("SELECT pseudo, mail, tel FROM Utilisateur WHERE pseudo = %s AND mdp = %s", (pseudo, mdp))
 
-            print(pseudo)
             data = cursor.fetchall()
 
-            print(data[0].id)
-            cursor.execute("SELECT name, pseudo, mail, tel FROM Admin WHERE id_user = %s", (data[0].id))
+            print(pseudo)
+            print(data[0])
+
+            cursor.execute("SELECT name, pseudo, mail, tel FROM Admin WHERE id_user = %s", (1))
             return jsonify(data)
         except:
             return "Erreur lors de la récupération des données utilisateur"
@@ -76,7 +77,6 @@ def post():
     if request.method == 'POST':
         try:
             cursor.execute("SELECT * FROM Post WHERE id_post = %s", (id_post))
-
             data = cursor.fetchall()
             return jsonify(data)
         except:
